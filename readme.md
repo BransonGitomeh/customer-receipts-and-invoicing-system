@@ -23,3 +23,10 @@ Every record uses a timeuuid as the unique identifier to collect the time events
 6. tests for the data entry - create data tests
 7. test the documents generation and overal  health and squash bugs
 
+#usage instructions
+1. clone
+2. have your cassandra cluster running. locally or on openshift
+3. run `node createSchema.js` to create all the relevant tables for the application
+4. run `node insertTestData.js` to insert seed data for tests in the db
+5. run `npm start` or deploy normally and view the application on `localhost:5555`
+
