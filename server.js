@@ -26,7 +26,10 @@ client.connect((err) => {
 
 
 function log(argument) {
-	// console.log(argument)
+	console.log(argument)
+	bot.sendMessage("21649399", argument).then(function (argument) {
+		// body...
+	})
 }
 
 
