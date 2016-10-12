@@ -9,7 +9,7 @@ const cassandra = require('cassandra-driver');
 const contact = process.env.OPENSHIFT_CASSANDRA_DB_HOST + ":" + process.env.OPENSHIFT_CASSANDRA_NATIVE_TRANSPORT_PORT
 
 var connectionOptions = {
-	contactPoints: [(process.env.OPENSHIFT_CASSANDRA_DB_HOST ? contactPoint2 : "localhost")],
+	contactPoints: [(process.env.OPENSHIFT_CASSANDRA_DB_HOST ? contact : "localhost")],
 	keyspace: 'system'
 };
 
