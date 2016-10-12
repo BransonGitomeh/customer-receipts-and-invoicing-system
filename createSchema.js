@@ -71,8 +71,8 @@ client.connect((err) => {
 	// create the keyspace first
 	client.execute(schemaQueries[0], (err, results) => {
 		// remove the keyspace command from the array
-		schemaQueries.splice(schemaQueries[0],1)
-		// run the commands all at once 
+		schemaQueries.splice(schemaQueries[0], 1)
+			// run the commands all at once 
 		async.filter(schemaQueries, (command, nextCB) => {
 			client.execute(command, (err, results) => {
 				assert.ifError(err)
@@ -83,7 +83,8 @@ client.connect((err) => {
 			})
 		}, function(err) {
 			console.log("completed creating the tables")
-				// shut down the node process
+			//close connection and shut down the node process
+			client.shutdown()
 			process.exit()
 		})
 	})
