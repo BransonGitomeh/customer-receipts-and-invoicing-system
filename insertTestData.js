@@ -1,4 +1,4 @@
-// this code creates the schema thats supposed to power the application
+// this code inserts fake well structured data into all the tables in the db to ease the development and testing process
 
 const async = require("async")
 const assert = require("assert")
@@ -31,7 +31,6 @@ client.connect((err) => {
 	var invoice = timeId.now()
 	var payment = timeId.now()
 
-	// an array of the commands to create the tables that create the schema 
 	// this is usefull for very easy on click deployments in new environments
 	var testDataQueries = [{
 		query: "insert into company.clients (id, company, contact, name) values (?, ?, ?, ?)",
