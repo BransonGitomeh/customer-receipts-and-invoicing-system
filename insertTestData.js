@@ -31,7 +31,7 @@ client.connect((err) => {
 	var invoice = timeId.now()
 	var payment = timeId.now()
 
-	// this is usefull for very easy on click deployments in new environments
+	// create the insert statements for all the entries you want. the will be executed like 1 query
 	var testDataQueries = [{
 		query: "insert into company.clients (id, company, contact, name) values (?, ?, ?, ?)",
 		params: [customer, "sabek tech", "0711657108", "Branson Gitomeh"]
